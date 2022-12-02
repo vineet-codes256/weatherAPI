@@ -2,9 +2,8 @@ const app = require('express')();
 const fetch = require('cross-fetch');
 const cities = require('./cities.json');
 
-const PORT = 8080;
-app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}`);
+app.listen(process.env.PORT || 5000, () => {
+    console.log(`Server listening on port ${process.env.PORT || 5000}`);
 });
 
 app.get('/getweather', async (req, res) => {
