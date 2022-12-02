@@ -6,7 +6,7 @@ app.listen(process.env.PORT || 5000, () => {
     console.log(`Server listening on port ${process.env.PORT || 5000}`);
 });
 
-app.get('/getweather', async (req, res) => {
+app.get('/' , async (req, res) => {
     let AllWeatherData = [];
     for (let i = 0; i < cities.length; i++) {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${cities[i].lat}&lon=${cities[i].lon}&appid=1471d4f11a5f30824120908dcd5c21ec`);
